@@ -196,7 +196,7 @@ def start_game(game, starter):
 def suggest_game():
     global game_map, words
     n = len(words)
-    idx = random.choice(xrange(n))
+    idx = random.choice(range(n))
     start = idx
     while words[idx] in game_map:
         idx = (idx + 1) % n
@@ -264,7 +264,7 @@ def act(game, action, target):
 @json_response
 def list_games():
     delete_games = []
-    for k, v in game_map.iteritems():
+    for k, v in game_map.items():
         if not v.started and time.time() - v.created > 600:
             delete_games.append(k)
         elif v.started and time.time() - v.created > 24*60*60:
@@ -327,7 +327,7 @@ def save_and_exit(number, frame):
     global game_map
 
     games = {}
-    for k, v in game_map.iteritems():
+    for k, v in game_map.items():
         games[k] = v.private_dict()
     with open('server/save.json', 'w') as f:
         f.write(json.dumps(games))

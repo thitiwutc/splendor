@@ -40,7 +40,7 @@ class Player(object):
 
     def dict(self):
         cards = {}
-        for k, v in self.cards.iteritems():
+        for k, v in self.cards.items():
             cards[k] = array_dict(v)
         return {
             'id': self.id,
@@ -267,7 +267,7 @@ class Card(object):
 
     def __str__(self):
         result = "{0} card worth {1}, costing ".format(COLOR_DICT[self.color], self.points)
-        costs = ["{0} {1}".format(v, COLOR_DICT[k]) for k, v in self.cost.iteritems() if v > 0]
+        costs = ["{0} {1}".format(v, COLOR_DICT[k]) for k, v in self.cost.items() if v > 0]
         return result + ', '.join(costs)
 
     def dict(self):
@@ -297,7 +297,7 @@ def array_dict(cards):
 
 def shuffle_deck(deck):
     n = len(deck)
-    for i in xrange(n):
+    for i in range(n):
         j = random.randint(i, n-1)
         x = deck[j]
         deck[j] = deck[i]
@@ -318,7 +318,7 @@ class Noble(object):
 
     def __str__(self):
         result = "noble worth {0}, seeking ".format(self.points)
-        costs = ["{0} {1}".format(v, COLOR_DICT[k]) for k, v in self.requirement.iteritems() if v > 0]
+        costs = ["{0} {1}".format(v, COLOR_DICT[k]) for k, v in self.requirement.items() if v > 0]
         return result + ', '.join(costs)
 
     def dict(self):
