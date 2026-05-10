@@ -3,3 +3,4 @@ activate
 ENV
 *.pyc
 save.json
+.venv
