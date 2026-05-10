@@ -1,12 +1,8 @@
 version: "3"
 
 services:
-    game:
-        image: yeka/python:splendor
-        ports:
-            - 8000:8000
-        volumes:
-            - ./server:/server
-            - ./client:/client
-        working_dir: /
-        command: python /server/splendor.py
+  game:
+    build:
+      context: .
+    ports:
+      - "${SERVER_PORT:-8000}:8000"
