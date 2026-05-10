@@ -215,7 +215,7 @@ def player_from_dict(obj, game):
     self.gems = obj['gems']
     for k, v in obj['cards'].iteritems():
         self.cards[k] = [card_from_dict(x) for x in v]
-    self.nobles = [noble_from_dict(x) for x in v]
+        self.nobles = [noble_from_dict(x) for x in v]
     return self
 
 class DummyPlayer(object):
