@@ -1,6 +1,4 @@
-# Splendor
-
-This is the fork of <https://github.com/caeleel/splendor>
+# splendor
 
 ## Run the game
 
